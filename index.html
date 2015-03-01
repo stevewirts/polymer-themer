@@ -1,0 +1,919 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Polymer Themes</title>
+
+
+    <link rel="stylesheet" href="theme.css" shim-shadowdom>
+
+
+<!--     // <script src="../bower_components/webcomponentsjs/webcomponents.min.js"></script> -->
+
+<link rel="import" href="../context-free-parser/context-free-parser.html">
+<link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="../core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../core-animation/core-animation.html">
+<link rel="import" href="../core-collapse/core-collapse.html">
+<link rel="import" href="../core-drag-drop/core-drag-drop.html">
+<link rel="import" href="../core-drawer-panel/core-drawer-panel.html">
+<link rel="import" href="../core-dropdown/core-dropdown.html">
+<link rel="import" href="../core-dropdown-menu/core-dropdown-menu.html">
+<link rel="import" href="../core-elements/core-elements.html">
+<link rel="import" href="../core-field/core-field.html">
+<link rel="import" href="../core-focusable/core-focusable.html">
+<link rel="import" href="../core-header-panel/core-header-panel.html">
+<link rel="import" href="../core-icon/core-icon.html">
+<link rel="import" href="../core-icon-button/core-icon-button.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../core-iconset/core-iconset.html">
+<link rel="import" href="../core-iconset-svg/core-iconset-svg.html">
+<link rel="import" href="../core-image/core-image.html">
+<link rel="import" href="../core-input/core-input.html">
+<link rel="import" href="../core-item/core-item.html">
+<link rel="import" href="../core-label/core-label.html">
+<link rel="import" href="../core-layout-grid/core-layout-grid.html">
+<link rel="import" href="../core-layout-trbl/core-layout-trbl.html">
+<link rel="import" href="../core-list/core-list.html">
+<link rel="import" href="../core-localstorage/core-localstorage.html">
+<link rel="import" href="../core-media-query/core-media-query.html">
+<link rel="import" href="../core-menu/core-menu.html">
+<link rel="import" href="../core-menu-button/core-menu-button.html">
+<link rel="import" href="../core-overlay/core-overlay.html">
+<link rel="import" href="../core-pages/core-pages.html">
+<link rel="import" href="../core-range/core-range.html">
+<link rel="import" href="../core-resizable/core-resizable.html">
+<link rel="import" href="../core-scaffold/core-scaffold.html">
+<link rel="import" href="../core-scroll-header-panel/core-scroll-header-panel.html">
+<link rel="import" href="../core-scroll-threshold/core-scroll-threshold.html">
+<link rel="import" href="../core-selection/core-selection.html">
+<link rel="import" href="../core-selector/core-selector.html">
+<link rel="import" href="../core-shared-lib/core-shared-lib.html">
+<link rel="import" href="../core-signals/core-signals.html">
+<link rel="import" href="../core-splitter/core-splitter.html">
+<link rel="import" href="../core-style/core-style.html">
+<link rel="import" href="../core-toolbar/core-toolbar.html">
+<link rel="import" href="../core-tooltip/core-tooltip.html">
+<link rel="import" href="../core-transition/core-transition.html">
+<link rel="import" href="../marked-element/marked-element.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../paper-dialog/paper-dialog.html">
+<link rel="import" href="../paper-dropdown/paper-dropdown.html">
+<link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../paper-elements/paper-elements.html">
+<link rel="import" href="../paper-fab/paper-fab.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../paper-progress/paper-progress.html">
+<link rel="import" href="../paper-radio-button/paper-radio-button.html">
+<link rel="import" href="../paper-radio-group/paper-radio-group.html">
+<link rel="import" href="../paper-ripple/paper-ripple.html">
+<link rel="import" href="../paper-shadow/paper-shadow.html">
+<link rel="import" href="../paper-slider/paper-slider.html">
+<link rel="import" href="../paper-spinner/paper-spinner.html">
+<link rel="import" href="../paper-tabs/paper-tabs.html">
+<link rel="import" href="../paper-toast/paper-toast.html">
+<link rel="import" href="../paper-toggle-button/paper-toggle-button.html">
+<link rel="import" href="../prettify-element/prettify-element.html">
+<link rel="import" href="../sampler-scaffold/sampler-scaffold.html">
+
+
+</head>
+
+<body unresolved touch-action="auto">
+
+<core-header-panel>
+
+    <div class="core-header">
+        <collapse-toolbar query="max-width: 767px">
+
+            <div class="logo nocollapse font-special">
+                <a href="/" title="Free Polymer Themes &amp; Templates">PolymerThemes</a>
+            </div>
+
+            <div flex class="nocollapse"></div>
+
+        </collapse-toolbar>
+    </div>
+
+    <div id="content">
+
+    <style shim-shadowdom>
+        .unselectable {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        .no-tap-color {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-touch-callout: none;
+        }
+
+        .example {
+            padding: 20px;
+        }
+
+        .centered-panel {
+            display: inline-block;
+            margin: 0 auto;
+            text-align: left;
+        }
+    </style>
+
+
+
+    <section>
+        <h1>Seven Seas</h1>
+        <h2>Deep sea blues</h2>
+        <a href="./css/theme.css?download" title="Download the CSS file for this theme"><paper-button raised primary><core-icon icon="file-download"></core-icon>Download CSS</paper-button></a>
+    </section>
+
+
+
+    <section hero id="example1">
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-button">Buttons</a></h3>
+        <div class="example">
+            <paper-button>Default</paper-button>
+            <paper-button primary>Primary</paper-button>
+            <paper-button secondary>Secondary</paper-button>
+            <paper-button success>Success</paper-button>
+            <paper-button info>Info</paper-button>
+            <paper-button warning>Warning</paper-button>
+            <paper-button error>Error</paper-button>
+            <paper-button link>Link</paper-button>
+        </div>
+        <div class="example">
+            <paper-button raised>Default</paper-button>
+            <paper-button raised primary>Primary</paper-button>
+            <paper-button raised secondary>Secondary</paper-button>
+            <paper-button raised success>Success</paper-button>
+            <paper-button raised info>Info</paper-button>
+            <paper-button raised warning>Warning</paper-button>
+            <paper-button raised error>Error</paper-button>
+            <paper-button raised link>Link</paper-button>
+        </div>
+        <div class="example">
+            <paper-button disabled>Default</paper-button>
+            <paper-button disabled primary>Primary</paper-button>
+            <paper-button disabled secondary>Secondary</paper-button>
+            <paper-button disabled success>Success</paper-button>
+            <paper-button disabled info>Info</paper-button>
+            <paper-button disabled warning>Warning</paper-button>
+            <paper-button disabled error>Error</paper-button>
+            <paper-button disabled link>Link</paper-button>
+        </div>
+    </section>
+
+
+
+    <section id="example2">
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-fab">Action Buttons</a></h3>
+
+        <div class="centered-panel">
+
+            <div class="example" center horizontal layout>
+                <div flex style="padding-right: 30px;">Big action button</div>&nbsp;
+                <paper-fab icon="favorite"></paper-fab>
+            </div>
+
+            <div class="example" center horizontal layout style="padding-right: 28px;">
+                <div flex style="padding-right: 30px;">Small action button</div>&nbsp;
+                <paper-fab mini icon="favorite"></paper-fab>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section hero id="example3">
+
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-icon-button">Icon Buttons</a></h3>
+
+        <style shim-shadowdom>
+
+            #example3 span {
+                display: inline-block;
+                text-align: right;
+                width: 6em;
+                margin-right: 1em;
+            }
+
+            #example3 paper-icon-button {
+                vertical-align: middle;
+            }
+
+        </style>
+
+        <div class="example centered-panel">
+
+            <div>
+                <span>icon buttons</span>
+                <paper-icon-button icon="menu"></paper-icon-button>
+                <paper-icon-button icon="arrow-back"></paper-icon-button>
+                <paper-icon-button icon="arrow-forward"></paper-icon-button>
+                <paper-icon-button icon="check"></paper-icon-button>
+                <paper-icon-button icon="close"></paper-icon-button>
+                <paper-icon-button icon="fullscreen"></paper-icon-button>
+                <paper-icon-button icon="fullscreen-exit"></paper-icon-button>
+                <paper-icon-button icon="more-vert"></paper-icon-button>
+                <paper-icon-button icon="refresh"></paper-icon-button>
+            </div>
+
+            <div>
+                <span>ripple fill</span>
+                <paper-icon-button fill icon="menu"></paper-icon-button>
+                <paper-icon-button fill icon="arrow-back"></paper-icon-button>
+                <paper-icon-button fill icon="arrow-forward"></paper-icon-button>
+                <paper-icon-button fill icon="check"></paper-icon-button>
+                <paper-icon-button fill icon="close"></paper-icon-button>
+                <paper-icon-button fill icon="fullscreen"></paper-icon-button>
+                <paper-icon-button fill icon="fullscreen-exit"></paper-icon-button>
+                <paper-icon-button fill icon="more-vert"></paper-icon-button>
+                <paper-icon-button fill icon="refresh"></paper-icon-button>
+            </div>
+
+            <div>
+                <span>disabled</span>
+                <paper-icon-button disabled icon="menu"></paper-icon-button>
+                <paper-icon-button disabled icon="arrow-back"></paper-icon-button>
+                <paper-icon-button disabled icon="arrow-forward"></paper-icon-button>
+                <paper-icon-button disabled icon="check"></paper-icon-button>
+                <paper-icon-button disabled icon="close"></paper-icon-button>
+                <paper-icon-button disabled icon="fullscreen"></paper-icon-button>
+                <paper-icon-button disabled icon="fullscreen-exit"></paper-icon-button>
+                <paper-icon-button disabled icon="more-vert"></paper-icon-button>
+                <paper-icon-button disabled icon="refresh"></paper-icon-button>
+            </div>
+
+            <div>
+                <span>toggles</span>
+                <paper-icon-button fill toggle icon="maps:directions-walk"></paper-icon-button>
+                <paper-icon-button fill toggle icon="maps:directions-bike"></paper-icon-button>
+                <paper-icon-button fill toggle icon="maps:directions-transit"></paper-icon-button>
+                <paper-icon-button fill toggle icon="maps:directions-car"></paper-icon-button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="unselectable no-tap-color" id="example8">
+
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-radio-button">Radio Buttons</a></h3>
+
+        <div class="centered-panel">
+
+            <div class="example" center horizontal layout>
+                <div flex style="padding-right: 30px;">Radio button</div>&nbsp;
+                <paper-radio-button></paper-radio-button>
+            </div>
+
+            <div class="example" center horizontal layout>
+                <div flex style="padding-right: 30px;">Radio button (toggles)</div>&nbsp;
+                <paper-radio-button toggles></paper-radio-button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section hero class="unselectable no-tap-color" id="example9">
+
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-radio-group">Radio Button Group</a></h3>
+
+        <div class="example centered-panel">
+
+            <h3>Keep Wi-Fi on during sleep</h3>
+
+            <paper-radio-group selected="2">
+                <paper-radio-button label="Always"></paper-radio-button><br>
+                <paper-radio-button label="Only when plugged in"></paper-radio-button><br>
+                <paper-radio-button label="Never"></paper-radio-button>
+            </paper-radio-group>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="unselectable no-tap-color" id="example13">
+
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-toggle-button">Toggle Buttons</a></h3>
+
+        <div class="centered-panel">
+
+
+            <div class="example" center horizontal layout>
+                <div flex style="padding-right: 50px;">Wi-Fi</div>&nbsp;
+                <paper-toggle-button checked></paper-toggle-button>
+            </div>
+
+            <div class="example" center horizontal layout>
+                <div flex style="padding-right: 50px;">Bluetooth</div>&nbsp;
+                <paper-toggle-button></paper-toggle-button>
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <section hero id="example2">
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-checkbox">Checkboxes</a></h3>
+
+
+        <div class="centered-panel">
+            <div class="example" layout horizontal center style="padding-right: 60px; padding-left: 0px;">
+                <paper-checkbox></paper-checkbox>
+                <div>Checkbox on the left</div>
+            </div>
+            <div class="example" layout horizontal center end-justified style="padding-left: 60px; padding-right: 0px;">
+                <div>Checkbox on the right</div>
+                <paper-checkbox checked></paper-checkbox>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <h3><a target="_blank" href="https://www.polymer-project.org/docs/elements/paper-elements.html#paper-dropdown-menu">Dropdown Menus</a></h3>
+
+        <div class="centered-panel">
+            <paper-dropdown-menu label="Fruit (halign left, valign top)">
+                <paper-dropdown class="dropdown">
+                    <core-menu class="menu">
+                        <paper-item>Apple</paper-item>
+                        <paper-item>Banana</paper-item>
+                        <paper-item>Cantelope</paper-item>
+                    </core-menu>
+                </paper-dropdown>
+            </paper-dropdown-menu>
+            <br><br>
+            <paper-dropdown-menu label="Fruit (halign left, valign bottom)">
+                <paper-dropdown class="dropdown" valign="bottom">
+                    <core-menu class="menu">
+                        <paper-item>Apple</paper-item>
+                        <paper-item>Banana</paper-item>
+                        <paper-item>Cantelope</paper-item>
+                    </core-menu>
+                </paper-dropdown>
+            </paper-dropdown-menu>
+            <br><br>
+            <paper-dropdown-menu label="Fruit (halign right, valign top)">
+                <paper-dropdown class="dropdown" halign="right">
+                    <core-menu class="menu">
+                        <paper-item>Apple</paper-item>
+                        <paper-item>Banana</paper-item>
+                        <paper-item>Cantelope</paper-item>
+                    </core-menu>
+                </paper-dropdown>
+            </paper-dropdown-menu>
+            <br><br>
+            <paper-dropdown-menu label="Fruit (halign right, valign bottom)">
+                <paper-dropdown class="dropdown" halign="right" valign="bottom">
+                    <core-menu class="menu">
+                        <paper-item>Apple</paper-item>
+                        <paper-item>Banana</paper-item>
+                        <paper-item>Cantelope</paper-item>
+                    </core-menu>
+                </paper-dropdown>
+            </paper-dropdown-menu>
+        </div>
+
+    </section>
+
+    <section hero id="example4">
+
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-input">Text Inputs</a></h3>
+
+        <style shim-shadowdom>
+            #example4 .example {
+                width: 22em;
+            }
+
+            #example4 paper-input {
+                width: 100%;
+            }
+        </style>
+
+        <div class="example centered-panel">
+
+            <h4>Simple</h4>
+
+            <paper-input label="Type something..."></paper-input><br>
+
+            <paper-input floatingLabel label="Floating label"></paper-input><br>
+
+            <paper-input disabled label="I'm disabled"></paper-input><br>
+
+            <br><br>
+
+            <h4>Validation</h4>
+
+            <paper-input-decorator label="Type something..." error="This input requires a value!">
+                <input is="core-input" required>
+            </paper-input-decorator>
+
+            <paper-input-decorator label="Type only numbers..." error="Input is not a number!">
+                <input is="core-input" type="number">
+            </paper-input-decorator>
+
+            <paper-button raised primary onclick="validateAll()">Click to validate</paper-button>
+            <script>
+                function validateAll() {
+                    var $d = document.getElementById('example4').querySelectorAll('paper-input-decorator');
+                    Array.prototype.forEach.call($d, function(d) {
+                      d.isInvalid = !d.querySelector('input').validity.valid;
+                    });
+                }
+            </script>
+
+            <br><br><br>
+
+            <h4>Auto-growing</h4>
+
+            <paper-input-decorator label="Autogrowing">
+                <paper-autogrow-textarea>
+                    <textarea></textarea>
+                </paper-autogrow-textarea>
+            </paper-input-decorator>
+
+            <paper-input-decorator floatingLabel label="Autogrowing with floating label">
+                <paper-autogrow-textarea>
+                    <textarea></textarea>
+                </paper-autogrow-textarea>
+            </paper-input-decorator>
+
+        </div>
+
+    </section>
+
+    <section class="unselectable no-tap-color" id="example10">
+
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-slider">Sliders</a></h3>
+
+        <style shim-shadowdom>
+            body #example10 {
+                padding: 24px;
+            }
+
+            #example10 paper-slider {
+                width: 100%;
+            }
+
+            #example10 section {
+                max-width: 1000px;
+                padding: 20px 0;
+            }
+
+            #example10 section > div {
+                padding: 14px;
+            }
+
+            #example10 #ratingsLabel {
+                padding-left: 12px;
+            }
+        </style>
+
+        <bs-container>
+            <bs-row>
+                <bs-col style="text-align: left;">
+
+                    <div>
+                        <div>Basic</div>
+                        <br>
+                        <paper-slider value="80"></paper-slider>
+
+                        <br><br><br>
+
+                        <div>Secondary Progress</div>
+                        <br>
+                        <paper-slider value="20" secondaryProgress="60"></paper-slider>
+
+                        <br><br><br>
+
+                        <div>Editable</div>
+                        <br>
+                        <paper-slider value="92" max="255" editable></paper-slider>
+
+                        <br><br><br>
+
+                        <div>Pin</div>
+                        <br>
+                        <paper-slider pin value="70"></paper-slider>
+
+                        <br><br><br>
+
+                        <div>
+                            <span>Snap</span><span id="ratingsLabel"></span>
+                        </div>
+                        <br>
+                        <paper-slider id="ratings" pin snaps max="10" step="1" value="5"></paper-slider>
+                    </div>
+
+                    <script>
+
+                        var ratings = document.querySelector('#ratings');
+                        ratings.addEventListener('core-change', function() {
+                            document.querySelector('#ratingsLabel').textContent = ratings.value;
+                        });
+
+                    </script>
+
+                </bs-col>
+            </bs-row>
+        </bs-container>
+    </section>
+
+    <section hero id="example7">
+
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-progress">Progress Bars</a></h3>
+
+        <style shim-shadowdom>
+            body #example7 {
+                margin: 0;
+                padding: 24px;
+            }
+
+            #example7 paper-progress {
+                display: block;
+                width: 100%;
+                padding: 25px 0;
+            }
+        </style>
+
+        <bs-container>
+            <bs-row>
+                <bs-col style="text-align: left;">
+
+                    <paper-progress></paper-progress>
+
+                    <paper-button raised onclick="startProgress();" id="paperProgressStart">Start</paper-button>
+
+                    <br><br>
+
+                    <paper-progress value="40" secondaryProgress="80"></paper-progress><br>
+
+                    <script>
+
+                        var progress = document.querySelector('paper-progress');
+                        var button = document.querySelector('#paperProgressStart');
+
+                        var repeat, maxRepeat = 5, animating = false;
+
+                        function nextProgress() {
+                            animating = true;
+                            if (progress.value < progress.max) {
+                                progress.value += (progress.step || 1);
+                            } else {
+                                if (++repeat >= maxRepeat) {
+                                    animating = false;
+                                    button.disabled = false;
+                                    return;
+                                }
+                                progress.value = progress.min;
+                            }
+                            progress.async(nextProgress);
+                        }
+
+                        function startProgress() {
+                            repeat = 0;
+                            progress.value = progress.min;
+                            button.disabled = true;
+                            if (!animating) {
+                                nextProgress();
+                            }
+                        }
+
+                        addEventListener('polymer-ready', function() {
+                            startProgress();
+                        });
+
+                    </script>
+
+                </bs-col>
+            </bs-row>
+        </bs-container>
+    </section>
+
+    <section>
+        <h3><a target="_blank" href="https://www.polymer-project.org/docs/elements/paper-elements.html#paper-spinner">Spinners</a></h3>
+
+        <div class="centered-panel">
+
+            <div center horizontal layout>
+                <div flex style="padding-right: 30px;">Styled</div>&nbsp;
+                <paper-spinner active></paper-spinner>
+            </div>
+            <br>
+
+            <div center horizontal layout>
+                <div flex style="padding-right: 30px;">Default</div>&nbsp;
+                <paper-spinner default-spinner active></paper-spinner>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section hero id="example12">
+
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-toast">Notifications</a></h3>
+
+        <style shim-shadowdom>
+
+            #example12 paper-button {
+                margin: 20px;
+            }
+
+        </style>
+
+        <bs-container>
+            <bs-row>
+                <bs-col style="text-align: center;">
+
+                    <paper-button raised onclick="document.querySelector('#toast1').show()">Discard Draft</paper-button>
+
+                    <paper-button raised onclick="document.querySelector('#toast2').show()">Get Messages</paper-button>
+
+                    <paper-button raised onclick="document.querySelector('#toast3').show()">Send Message</paper-button>
+
+                    <paper-toast id="toast1" text="Your draft has been discarded."></paper-toast>
+
+                    <paper-toast id="toast2" role="alert" text="Connection timed out. Showing limited messages.">
+                        <div class="highlight" onclick="console.log('RETRY')">Retry</div>
+                    </paper-toast>
+
+                    <paper-toast id="toast3" class="capsule" text="Message sent"></paper-toast>
+
+
+                </bs-col>
+            </bs-row>
+        </bs-container>
+    </section>
+
+    <section id="example11">
+
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-tabs">Tabs</a></h3>
+
+        <bs-container>
+            <bs-row>
+                <bs-col style="text-align: left;">
+
+                    <h3>A. No ink effect and no sliding bar</h3>
+
+                    <paper-tabs selected="0" noink nobar>
+
+                        <paper-tab>ITEM ONE</paper-tab>
+                        <paper-tab>ITEM TWO</paper-tab>
+                        <paper-tab>ITEM THREE</paper-tab>
+
+                    </paper-tabs>
+
+                    <br>
+                    <br>
+
+                    <h3>B. The bar slides to the selected tab</h3>
+
+                    <paper-tabs selected="0" noink>
+
+                        <paper-tab>ITEM ONE</paper-tab>
+                        <paper-tab>ITEM TWO</paper-tab>
+                        <paper-tab>ITEM THREE</paper-tab>
+
+                    </paper-tabs>
+
+                    <br>
+                    <br>
+
+                    <h3>C. Inky Tabs</h3>
+
+                    <paper-tabs selected="0">
+
+                        <paper-tab>ITEM ONE</paper-tab>
+                        <paper-tab>ITEM TWO</paper-tab>
+                        <paper-tab>ITEM THREE</paper-tab>
+
+                    </paper-tabs>
+
+                    <br>
+                    <br>
+
+                    <paper-tabs selected="0" class="transparent-teal">
+
+                        <paper-tab>ITEM ONE</paper-tab>
+                        <paper-tab>ITEM TWO</paper-tab>
+                        <paper-tab>ITEM THREE</paper-tab>
+
+                    </paper-tabs>
+
+                    <br>
+                    <br>
+
+                    <core-toolbar class="medium-tall">
+
+                        <paper-icon-button icon="menu"></paper-icon-button>
+                        <div flex>Title</div>
+                        <paper-icon-button icon="search"></paper-icon-button>
+                        <paper-icon-button icon="more-vert"></paper-icon-button>
+
+                        <div class="bottom fit" horizontal layout>
+
+                            <paper-tabs selected="0" flex style="max-width: 600px;">
+
+                                <paper-tab>ITEM ONE</paper-tab>
+                                <paper-tab>ITEM TWO</paper-tab>
+                                <paper-tab>ITEM THREE</paper-tab>
+
+                            </paper-tabs>
+
+                        </div>
+
+                    </core-toolbar>
+
+                    <br>
+                    <br>
+
+                    <core-toolbar class="tall">
+
+                        <paper-tabs selected="0" class="bottom indent" style="width: 200px;" self-end>
+
+                            <paper-tab>ITEM ONE</paper-tab>
+                            <paper-tab>ITEM TWO</paper-tab>
+
+                        </paper-tabs>
+
+                        <div class="bottom" flex></div>
+
+                        <paper-icon-button class="bottom" icon="search"></paper-icon-button>
+
+                    </core-toolbar>
+
+                </bs-col>
+            </bs-row>
+        </bs-container>
+    </section>
+
+    <section hero id="example6">
+
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-menu-button">Menu Buttons</a></h3>
+
+
+
+        <style shim-shadowdom>
+
+            #example6 .card {
+                width: 320px;
+                height: 480px;
+                margin: 16px 12px;
+                border-radius: 3px;
+            }
+
+            #example6 .toolbar {
+                position: relative;
+                padding: 0.5em;
+                border-radius: 3px 3px 0 0;
+            }
+
+            #example6 .inner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                z-index: -1;
+            }
+
+            #example6 core-menu {
+                margin: 0px;
+            }
+
+        </style>
+
+        <bs-container>
+            <bs-row>
+                <bs-col mdpush="3" md="6" layout horizontal center-justified>
+
+                    <div class="card paper-shadow-top-z-1">
+                        <div class="inner paper-shadow-bottom-z-1"></div>
+                        <div layout horizontal class="toolbar paper-shadow-top-z-1">
+                        <div class="inner paper-shadow-bottom-z-1"></div>
+                            <paper-menu-button>
+                                <paper-icon-button icon="menu"></paper-icon-button>
+                                <paper-dropdown class="dropdown" transition="">
+                                    <core-menu class="menu">
+                                        <paper-item>Menu Item 1</paper-item>
+                                        <paper-item>Menu Item 2</paper-item>
+                                        <paper-item>Menu Item 3</paper-item>
+                                    </core-menu>
+                                </paper-dropdown>
+                            </paper-menu-button>
+                            <div flex></div>
+                            <paper-icon-button icon="search"></paper-icon-button>
+                            <paper-menu-button>
+                                <paper-icon-button icon="more-vert"></paper-icon-button>
+                                <paper-dropdown class="dropdown" transition="" halign="right">
+                                    <core-menu class="menu">
+                                        <paper-item>Refresh</paper-item>
+                                        <paper-item>Send Feedback</paper-item>
+                                        <paper-item>Settings</paper-item>
+                                        <paper-item>Help</paper-item>
+                                        <paper-item>Sign Out</paper-item>
+                                    </core-menu>
+                                </paper-dropdown>
+                            </paper-menu-button>
+                        </div>
+                    </div>
+
+                </bs-col>
+            </bs-row>
+        </bs-container>
+    </section>
+
+    <section id="example5">
+
+        <h3><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html#paper-item">Menu Items</a></h3>
+
+        <div class="example centered-panel">
+            <paper-item>
+                <core-icon icon="refresh"></core-icon>
+                Item 1
+            </paper-item>
+            <paper-item>Item 2</paper-item>
+            <paper-item>Item 3</paper-item>
+        </div>
+    </section>
+
+    <section hero id="example-dialog">
+        <h3><a target="_blank" href="https://www.polymer-project.org/docs/elements/paper-elements.html#paper-dialog">Dialogs</a></h3>
+
+        <div class="example centered-panel">
+            <paper-button raised primary onclick="openDialog(this);">
+                Plain
+                <paper-dialog>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </paper-dialog>
+            </paper-button>
+            <paper-button raised primary onclick="openDialog(this);">
+                Titled
+                <paper-dialog heading="The Lorem ipsum">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </paper-dialog>
+            </paper-button>
+            <paper-button raised primary onclick="openDialog(this);">
+                Actions
+                <paper-action-dialog heading="The Lorem ipsum">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <paper-button dismissive>More...</paper-button>
+                    <paper-button affirmative>Decline</paper-button>
+                    <paper-button affirmative autofocus>Accept</paper-button>
+                </paper-action-dialog>
+            </paper-button>
+            <paper-button raised primary onclick="openDialog(this);">
+                Modal
+                <paper-action-dialog backdrop autoCloseDisabled heading="The Lorem ipsum">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <paper-button affirmative autofocus>Okay</paper-button>
+                </paper-action-dialog>
+            </paper-button>
+        </div>
+
+        <script>
+            function openDialog(e) {
+                var dialog = e.querySelector("paper-dialog,paper-action-dialog");
+                if(dialog) {
+                    dialog.toggle();
+                }
+            }
+        </script>
+
+    </section>
+
+    </div>
+
+</core-header-panel>
+
+
+</body>
+
+</html>

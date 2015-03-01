@@ -1,0 +1,38 @@
+{
+  "name": "fin-theme",
+  "version": "0.0.0",
+  "authors": [
+    "Steve Wirts <stevewirts@gmail.com>"
+  ],
+  "keywords": [
+    "polymer"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "../",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "context-free-parser": "Polymer/context-free-parser#^0.5",
+    "core-a11y-keys": "Polymer/core-a11y-keys#^0.5",
+    "core-ajax": "Polymer/core-ajax#^0.5",
+    "core-animated-pages": "Polymer/core-animated-pages#^0.5",
+    "core-animation": "Polymer/core-animation#^0.5",
+    "core-collapse": "Polymer/core-collapse#^0.5",
+    "core-doc-viewer": "Polymer/core-doc-viewer#^0.5",
+    "core-docs": "Polymer/core-docs#^0.5",
+    "core-drag-drop": "Polymer/core-drag-drop#^0.5",
+    "core-drawer-panel": "Polymer/core-drawer-panel#^0.5",
+    "core-dropdown-menu": "Polymer/core-dropdown-menu#^0.5",
+    "core-elements": "Polymer/core-elements#~0.5.5",
+    "paper-checkbox": "Polymer/paper-checkbox#^0.5",
+    "paper-dialog": "Polymer/paper-dialog#^0.5",
+    "paper-dropdown-menu": "Polymer/paper-dropdown-menu#^0.5",
+    "paper-elements": "Polymer/paper-elements#~0.5.5"
+  }
+}
