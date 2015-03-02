@@ -1,33 +1,31 @@
 {
 
-    "font": "Lato",
-    "fontSpecial": "Lustria",
+    "font": "Quicksand",
+    "fontSpecial": "Quicksand",
 
-    "background": "#f0f2dd",
+    "background": "#303030",
+    "default": "#f49823",
 
-
-    "hero": "#a8cccc",
     "content": "linear-gradient(#d6e3e7, #add8e6)",
-    "hero": "#dbe9d6",
-    "default": "#585e62",
-    "primary": "#3d6868",
-    "secondary": "#40957f",
-    "success": "#a7c686",
-    "info": "#3c515d",
-    "warning": "#fadd60",
-    "error": "#ff7043",
-    "link": "#ffffff",
+    "hero": "#0d0444",
+    "primary": "#f49823",
+    "secondary": "#164363",
+    "success": "#20a200",
+    "info": "#66c5ff",
+    "warning": "#840013",
+    "error": "#acacac",
+    "link": "#f8ef0a",
 
-    "defaultRaised": "#ffffff",
-    "primaryRaised": "#ffffff",
+    "defaultRaised": "#776413",
+    "primaryRaised": "#000000",
     "secondaryRaised": "#ffffff",
     "successRaised": "#ffffff",
-    "infoRaised": "#ffffff",
-    "warningRaised": "#776413",
+    "infoRaised": "#000000",
+    "warningRaised": "#ffffff",
     "errorRaised": "#ffffff",
     "linkRaised": "#000000",
 
-    "disabled": "#316868",
-    "disabledBackground": "#93c7c6"
+    "disabled": "#000000",
+    "disabledBackground": "#353535"
 
 }

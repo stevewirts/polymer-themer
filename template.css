@@ -304,7 +304,7 @@ html /deep/ paper-button[error][raised]::shadow #ripple {
 }
 html paper-button[link],
 html /deep/ paper-button[link] {
-  color: <%= linkRaised %>;
+  color: <%= link %>;
 }
 html paper-button[link] #ripple,
 html /deep/ paper-button[link] #ripple,
