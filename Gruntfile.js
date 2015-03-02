@@ -57,7 +57,7 @@ module.exports = function(grunt) {
         },
         open: {
             index: {
-                path: 'http://localhost:<%= express.all.options.port%>/fin-theme/index.html'
+                path: 'http://localhost:<%= express.all.options.port%>/polymer-themer/index.html'
             }
 
         },
