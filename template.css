@@ -548,7 +548,7 @@ html /deep/ .logo {
 html .logo a,
 html /deep/ .logo a {
   font-weight: 700;
-  color: <%= link %>;
+  color: <%= default %>;
 }
 html .inverse,
 html /deep/ .inverse {
